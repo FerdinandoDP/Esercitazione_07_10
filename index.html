@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!--first container-->
+    <div class="container-fluid " style="background-color:cadetblue ">
+        <div class=row></div>
+        <div class="row-fluid mx-2 mt-2 bg-light">
+            <!--header-->
+            <header>
+                <h1 class="text-center">Blog</h1>
+            </header>
+            <!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-2">
+                <div class="navbar-brand text-white">FDP</div>
+                <button class="navbar-toggler bg-white" type="button" data-toggle="collapse" data-target="#voices" aria-controls="voices" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                <div class="collapse navbar-collapse" id="voices">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active ">
+                            <a class="nav link text-white" href="#">Home</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="row"></div>
+    </div>
+   
+    <!--second container-->
+    <div class="container-fluid bg-dark">
+        <div class="row align-items-start">
+            <div class="col-lg-6">
+                <button class="btn btn-light my-2 ml-2" data-toggle="modal" data-target="#modal_insert">aggiungi articolo</button>
+                <button class="btn btn-light my-2 ml-2" data-toggle="modal" data-target="#modal_insert_2">elimina articolo</button> 
+                <button class="btn btn-light my-2 ml-2" data-toggle="modal" data-target="#modal_insert_3">modifica articolo</button>
+            </div>
+            <div class="col"></div>
+            <div class="col "></div>
+        </div>
+        <!--area in primo piano-->
+        <div class="row mt-2 mx-2 bg-light align-items-start center" id="article_section_p"></div>
+        <!--area non in primo priano-->
+        <div class="row mb-2 mx-2 bg-light align-items-start center" id="article_section"></div>
+        
+        <!--add modal-->
+        <div class="row">
+            <div class="modal fade" id="modal_insert" tabindex="-1" role="dialog" aria-labelledby="modal_insertLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal_insertLabel">Aggiungi un articolo!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" class="form-control mb-2" id="recipient-title" placeholder="Inserisci il titolo">
+                            <textarea class="form-control mb-2" id="text-body" placeholder="Inserisci il corpo"></textarea>
+                            <textarea class="form-control mb-2" id="tags_area" placeholder="Inserisci i tag delimitati da virgole"></textarea>
+                            <label for="checkbox_featured">In Primo Piano:</label>
+                            <div id="checkbox_featured">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radio1" value="option1">
+                                    <label class="form-check-label" for="Radio1">Si</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="Radio2" value="option2">
+                                    <label class="form-check-label" for="Radio2">No</label>
+                                </div>
+                            </div>
+                            <label for="checkbox_public">Da Rendere pubblico?:</label>
+                            <div class="checkbox_public">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios_2" id="Radio3" value="option1">
+                                    <label class="form-check-label" for="Radio3">Si</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="exampleRadios_2" id="Radio4" value="option2">
+                                    <label class="form-check-label" for="Radio4">No</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info" type="button" id="send_article">Invia</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--delete modal-->
+        
+        <div class="row">
+            <div class="modal fade" id="modal_insert_2" tabindex="-1" role="dialog" aria-labelledby="modal_insertLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal_insertLabel">Elimina un articolo!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--update modal-->
+        
+        <div class="row">
+            <div class="modal fade" id="modal_insert_3" tabindex="-1" role="dialog" aria-labelledby="modal_insertLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal_insertLabel">Modifica un articolo!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!--footer-->
+        <div class="row-fluid mx-2 my-2">
+            <footer style="background-color:cadetblue">
+                <h5 class="p-2 text-dark">Ferdinando Di Pasquale</h5>
+                <p class="mx-2 text-white">bla bla bla <br> bla bla bla <br> bla bla bla</p>
+            </footer>
+        </div>
+        <div class="row"> </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="model/Post.js"></script>
+    <script src="model/Comments.js"></script>
+    <script src="controller/Controller.js"></script>
+   <!-- <script>
+        var controller=new Controller();
+        var post1= new Post("Articolo_1", "kdjnfkdjf", true, true, ["coviddi", "bleble"]);
+        var post2= new Post("Articolo_2", "kdjnfkdjf", true, false, ["coviddi", "bleble"]);
+        var post3= new Post("Articolo_3", "kdjnfkdjf", false, true, ["coviddi", "bleble"]);
+        var post4= new Post("Articolo_4", "kdjnfkdjf", false, false, ["coviddi", "bleble"]);
+        controller.create_Card(post1);
+        controller.create_Card(post2);
+        controller.create_Card(post3);
+        controller.create_Card(post4);
+    </script>-->
+    <!--<script>
+        var controller=new Controller();
+        $('#send_article').click(function(){
+            controller.add_Post();
+            controller.reset_addmodal();
+        })
+        controller.add_Comment();
+    </script>-->
+    <script>
+        var controller=new Controller();
+        controller.get_Posts();
+        
+        $('#send_article').click(function(){
+            controller.create_Post();
+        })
+        controller.add_Comment();
+       /* var id_a="-MJ48qQ-2d6GxH5iYRoF";
+        $.ajax({
+                url: 'https://texty-89895.firebaseio.com/posts.json/'+id_a,
+                method: 'DELETE',
+                contentType:'application/json',
+            
+                success: function(){
+                    console.log("ole");
+                
+                    // dato.addProperty("jsgkjhsfg", );    
+                },
+                error: function(){
+                    console.log("errore");
+                }    
+            })*/
+    </script>
+</body>
+</html>
